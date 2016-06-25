@@ -8,3 +8,26 @@ Projekt oraz działający prototyp został zrealizowany przez młodego, początk
 
 Stos technologiczny: PostgreSQL, SpringBoot, JPA, Hibernate, 
 REST, Thymeleaf, Bootstrap, Android.
+
+
+# Info
+
+Repozytorium aplikacji Android: https://github.com/filipolszewski/CultureTalkAndroid
+
+# Uruchamianie
+
+Aby oba projekty działały, trzeba pobrać kopię zapasową bazy danych Postgresql i stworzyć ją
+np. w programie pgAdmin (Stworzyć bazę o nazwie "filip" (credentials: "postgres" / "") następnie użyć na niej opcji "Przywróć" i wybrać plik kopii)
+Niestety nie umiem dostarczyć całej, spójnej aplikacji od razu gotowej do testów. Pierwszy raz pisałem aplikację rozproszoną. 
+Postaram się pomóc i odpowiedzieć na pytania związane z uruchamianiem aplikacji do testów.
+
+Aby przeprowadzić testy należy aplikację Android uruchomić na telefonie (Potrzebne będzie IDE Android Studio i kilka minut),
+uruchomić projekt z repozytorium, w którym właśnie jesteśmy, aby uruchomić potrzebne do działania WebSerwisy, a także, zgodnie z powyższymi instrukcjami skonfigurować bazę danych na podstawie kopii zapasowej.
+
+# Kopia zapasowa Postgresql
+
+https://www.dropbox.com/s/6irmbukbdsztuux/cTalk_database.backup?dl=0
+
+# Kontakt
+
+filipolszew@o2.pl
