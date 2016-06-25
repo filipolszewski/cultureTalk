@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>CultureTalk</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+<link rel="stylesheet" type="text/css" href="css/messages.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/messages.js"></script>
+<script th:inline="javascript" type="text/javascript">
+/*<![CDATA[*/
+$(document).ready(function() {
+	$('#datepicker').datepicker('setEndDate', [[${#calendars.format(startDate,'dd/MM/yyyy')}]]);
+	$('#datepicker2').datepicker('setStartDate', [[${#calendars.format(endDate,'dd/MM/yyyy')}]]);
+});
+/*]]>*/
+</script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="jumbotron" id="main">
+				<h1>Wiadomości</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">&nbsp;</div>
+			<div class="col-md-2">
+				<a class="btn btn-primary btn-lg" href="/admin" id="indexBtn">Powrót
+					&nbsp; &nbsp;<span class="glyphicon glyphicon-arrow-right"
+					aria-hidden="true"></span>
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<form role="form" method="get" id="form">
+					<div class="form-group has-feedback">
+						<span class="glyphicon glyphicon-search form-control-feedback"></span>
+						<input type="text" class="form-control" id="searchString"
+							name="searchStr" th:value="${query}" placeholder="Szukaj..."></input>
+					</div>
+					<div class="form-group">
+						<div class="input-group input-daterange">
+							<input type="text" class="form-control" id="datepicker"
+								th:value="${#calendars.format(startDate,'dd/MM/yyyy')}"
+								name="startDate" required="required" /> <span
+								class="input-group-addon">do</span> <input type="text"
+								class="form-control" id="datepicker2"
+								th:value="${#calendars.format(endDate,'dd/MM/yyyy')}"
+								name="endDate" required="required" />
+						</div>
+					</div>
+					<input type="hidden" name="pageNo" th:value="${page}" id="pageNo" />
+					<input type="submit" class="btn btn-primary btn-block"
+						value="Szukaj" />
+
+				</form>
+			</div>
+			<div class="col-md-9">
+				<table class="table table-hover table-condensed table-bordered">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Data</th>
+							<th>Nadawca</th>
+							<th>Adresat</th>
+							<th>Wiadomość</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="msg : ${listOfMsg}">
+							<td th:text="${msg.idMessage}"></td>
+							<td
+								th:text="${#calendars.format(msg.dateSent,'yyyy.MM.dd HH:mm:ss')}"></td>
+							<td th:text="${msg.userFrom.name}"
+								th:title="${msg.userFrom.name}">J</td>
+							<td th:text="${msg.userTo.name}" th:title="${msg.userTo.name}"></td>
+							<td th:text="${msg.message}"></td>
+						</tr>
+					</tbody>
+				</table>
+				<div>
+					<ul class="pager">
+						<li th:if="${page > 0}"><a onclick="onPreviousPageClick()"
+							style="cursor: pointer;">Poprzedni</a></li>
+						<li><span id="pageNumber" th:text="${page + 1}">1</span></li>
+						<li th:if="${!lastPage}"><a onclick="onNextPageClick()"
+							style="cursor: pointer;">Następny</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

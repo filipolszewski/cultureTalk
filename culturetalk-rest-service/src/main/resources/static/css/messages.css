@@ -1,0 +1,24 @@
+body {
+	padding-top: 10px;
+	padding-bottom: 40px;
+	background-color: #eee;
+}
+
+button {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#indexBtn {
+	margin-bottom: 12px;
+}
+
+#main {
+	background-color: #c42;
+	margin-bottom: 12px;
+	color: white;
+}
+
+.pagination {
+	margin-top: 0px;
+}

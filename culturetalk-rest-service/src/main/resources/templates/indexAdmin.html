@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>CultureTalk</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/index.css"/>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="container jumbotron" id="main">
+				<h1>CultureTalk - Panel Administratora</h1>
+			</div>
+		</div>
+		<div class="col-md-4">&nbsp;</div>
+		<div class="panel panel-default">
+			<div class="col-md-4">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-2">&nbsp;</div>
+						<div class="col-md-8">
+							<a class="btn btn-lg btn-primary btn-block" href="/users">Użytkownicy
+								&nbsp; &nbsp;<span class="glyphicon glyphicon-user"
+								aria-hidden="true"></span>
+							</a>
+						</div>
+						<div class="col-md-2">&nbsp;</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2">&nbsp;</div>
+						<div class="col-md-8">
+							<a class="btn btn-lg btn-primary btn-block" href="/messages">Wiadomości
+								&nbsp; &nbsp;<span class="glyphicon glyphicon-envelope"
+								aria-hidden="true"></span>
+							</a>
+						</div>
+						<div class="col-md-2">&nbsp;</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2">&nbsp;</div>
+						<div class="col-md-8">
+							<a class="btn btn-lg btn-primary btn-block" href="/institutions">Instytucje
+								&nbsp; &nbsp;<span class="glyphicon glyphicon-home"
+								aria-hidden="true"></span>
+							</a>
+						</div>
+						<div class="col-md-2">&nbsp;</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2">&nbsp;</div>
+						<div class="col-md-8">
+							<a class="btn btn-lg btn-primary btn-block" href="/eventsAdmin">Wydarzenia
+								&nbsp; &nbsp;<span class="glyphicon glyphicon-flag"
+								aria-hidden="true"></span>
+							</a>
+						</div>
+						<div class="col-md-2">&nbsp;</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2">&nbsp;</div>
+						<div class="col-md-8">
+							<form th:action="@{/logout}" role="logout" method="post">
+								<button type="submit" class="btn btn-lg btn-primary btn-block">
+									Wyloguj się &nbsp; &nbsp;<span class="glyphicon glyphicon-log-out"
+										aria-hidden="true"></span>
+								</button>
+							</form>
+						</div>
+						<div class="col-md-2">&nbsp;</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">&nbsp;</div>
+	</div>
+</body>
+</html>

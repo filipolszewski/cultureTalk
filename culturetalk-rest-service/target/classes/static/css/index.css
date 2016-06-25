@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+
+body {
+	padding-bottom: 40px;
+	background-color: #eee;
+}
+
+a, button {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#main {
+	background-color: #c42;
+	margin-bottom: 90px;
+	color: white;
+}
+.jumbotron {
+	background-color: #c42;
+	color: white;
+}
+h1, h2 {
+	text-align: center;
+}
+.panel-heading {
+	background-color: #c42;
+	color: white;
+	font-size: 25px;
+	text-align: center;
+}
+.panel-body {
+	font-size: 18px;
+	text-align: center;
+	margin-bottom: 10px;
+}

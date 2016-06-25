@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+
+body {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #eee;
+}
+
+button {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#main {
+	background-color: #c42;
+	margin-bottom: 12px;
+	color: white;
+}
+
+#indexBtn {
+	margin-bottom: 12px;
+}
+
+.status {
+	font-weight: bold;
+}
+
+.pagination {
+	margin-top: 0px;
+}

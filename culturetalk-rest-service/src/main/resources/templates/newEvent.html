@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>CultureTalk</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/newEvent.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="jumbotron">
+				<h1>CultureTalk</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="container">
+				<h2>Stwórz wydarzenie</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">&nbsp;</div>
+			<div class="col-md-4">
+				<form th:action="@{/newEvent}" role="form"
+					th:object="${newEventData}" method="post">
+					<div class="form-group">
+						<label for="name">Tytuł:</label> <input type="text"
+							class="form-control" name="name" id="name" placeholder="Nazwa..."
+							th:field="*{name}" />
+					</div>
+					<div class="form-group">
+						<label for="datepicker">Data:</label>
+						<div class="input-datepicker">
+							<input type="text" class="form-control" id="datepicker"
+								name="date" th:field="*{date}" placeholder="Wybierz datę..."
+								required="required" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="address">Adres:</label> <input type="text"
+							class="form-control" name="address" id="address"
+							th:field="*{address}" />
+					</div>
+					<div class="form-group">
+						<label for="number">Ticket Link:</label> <input type="text"
+							class="form-control" name="ticket" id="ticket"
+							placeholder="Ticket Link" th:field="*{ticketLink}" />
+					</div>
+					<div class="form-group">
+						<label for="description">Opis:</label> 
+						<textarea class="form-control" rows="5" name="description" id="description"
+							th:field="*{description}" placeholder="Opis..."></textarea>
+					</div>
+					<div class="form-group">
+						<label for="tags"> Tagi: </label> <label class="checkbox"
+							th:each="tag : ${tags}"> <input type="checkbox"
+							th:value="${tag.id}" th:text="${tag.name}"
+							th:field="*{tags}"></input>
+						</label>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary">Zatwierdź</button>
+						<a href="/instPanel"><button type="button" class="btn btn-primary">Powrót</button></a>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-4">&nbsp;</div>
+		</div>
+	</div>
+</body>
+</html>

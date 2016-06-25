@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>CultureTalk</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style>
+h1, h2 {
+	text-align: center;
+}
+
+body {
+	padding-bottom: 40px;
+	background-color: #eee;
+}
+
+.jumbotron {
+	background-color: #c42;
+	color: white;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="jumbotron">
+				<h1>CultureTalk</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="container">
+				<h2>Zaloguj się</h2>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">&nbsp;</div>
+			<div class="col-md-4">
+				<form th:action="@{/login}" role="form" method="post">
+					<div class="form-group">
+						<label for="usr">Adres Email</label> <input type="text"
+							class="form-control" name="username" id="usr"
+							placeholder="Adres Email" />
+					</div>
+					<div class="form-group">
+						<label for="pwd">Hasło:</label> <input type="password"
+							class="form-control" name="password" id="pwd"
+							placeholder="Hasło" />
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary">Zaloguj</button>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-4">&nbsp;</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">&nbsp;</div>
+			<div class="container" th:if="${param.error}">
+				<h4>Nieprawidłowe dane.</h4>
+			</div>
+			<div class="container" th:if="${param.regSuccess}">
+				<h4>Rejesteacja powiodła się.</h4>
+			</div>
+			<div class="container" th:if="${param.logout}">
+				<h4>Zostałeś wylogowany.</h4>
+			</div>
+			<div class="col-md-4">&nbsp;</div>
+		</div>
+	</div>
+</body>
+</html>

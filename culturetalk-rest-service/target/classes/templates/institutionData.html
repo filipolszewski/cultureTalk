@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>CultureTalk</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/index.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="jumbotron">
+				<h1>Instytucja</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="container">
+				<h2 th:text="${instData.name} + ' (id:' + ${instData.id} + ')'"></h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">&nbsp;</div>
+			<div class="col-md-4">
+				<form th:action="'/institutionInfo/' + ${instData.id}" role="form"
+					th:object="${instData}" method="post">
+					<div class="form-group">
+						<label for="name">Nazwa Instytucji:</label> <input type="text"
+							class="form-control" name="name" id="name" placeholder="Name"
+							th:field="*{name}" />
+					</div>
+					<div class="form-group">
+						<label for="email">Adres Email:</label> <input type="text"
+							class="form-control" name="username" id="email"
+							placeholder="Email address" th:field="*{email}" />
+					</div>
+					<div class="form-group">
+						<label for="address">Adres:</label> <input type="text"
+							class="form-control" name="address" id="address"
+							placeholder="Address" th:field="*{address}" />
+					</div>
+					<div class="form-group">
+						<label for="prov">Województwo:</label> <select class="form-control"
+							id="prov" th:field="*{province}">
+							<option th:each="prov : ${provinces}"
+								th:value="${prov.idProvince}" th:text="${prov.name}"></option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="number">Numer Kontaktowy:</label> <input type="number"
+							class="form-control" name="number" id="number"
+							placeholder="Contact Number" th:field="*{number}" />
+					</div>
+					<div class="form-group">
+						<label for="webpage">Strona internetowa:</label> <input type="text"
+							class="form-control" name="webpage" id="webpage"
+							placeholder="Webpage Link" th:field="*{page}" />
+					</div>
+					<div class="form-group">
+						<label for="facebook">Facebook Fanpage:</label> <input
+							type="text" class="form-control" name="facebook" id="facebook"
+							placeholder="Facebook" th:field="*{facebook}" />
+					</div>
+					<div class="form-group">
+						<label for="description">Opis:</label> <input type="text"
+							class="form-control" name="description" id="description"
+							placeholder="Description" th:field="*{description}" />
+					</div>
+
+					<div class="form-group">
+						<label for="description">Tagi:</label> <label class="checkbox"
+							th:each="tag : ${tags}"><input type="checkbox"
+							th:value="${tag.id}" th:text="${tag.name}" th:field="*{tags}"></input></label>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary">Zapisz</button>
+						<a href="/institutions"><button type="button" class="btn btn-primary">Wróć</button></a>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-4">&nbsp;</div>
+		</div>
+	</div>
+</body>
+</html>
