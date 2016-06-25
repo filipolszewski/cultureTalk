@@ -14,6 +14,9 @@ REST, Thymeleaf, Bootstrap, Android.
 
 Repozytorium aplikacji Android: https://github.com/filipolszewski/CultureTalkAndroid
 
+Projekty całej aplikacji CultureTalk do programu yED (użyte w filmie):
+https://www.dropbox.com/sh/doxs6px0leukrd6/AACcMry7ga3il-wwZSDEWz-ca?dl=0
+
 # Uruchamianie
 
 Aby oba projekty działały, trzeba pobrać kopię zapasową bazy danych Postgresql i stworzyć ją
