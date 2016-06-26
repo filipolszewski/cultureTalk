@@ -6,7 +6,7 @@ Dzięki CultureTalk możemy łatwo nawiązywać rozmowy i dyskusje dot. kultury 
 
 Projekt oraz działający prototyp został zrealizowany przez młodego, początkującego programistę, studenta.
 
-Stos technologiczny: PostgreSQL, SpringBoot, JPA, Hibernate, 
+Stos technologiczny: Java, PostgreSQL, SpringBoot, JPA, Hibernate, 
 REST, Thymeleaf, Bootstrap, Android.
 
 
