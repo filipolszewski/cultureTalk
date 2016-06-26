@@ -27,6 +27,12 @@ Postaram się pomóc i odpowiedzieć na pytania związane z uruchamianiem aplika
 Aby przeprowadzić testy należy aplikację Android uruchomić na telefonie (Potrzebne będzie IDE Android Studio i kilka minut),
 uruchomić projekt z repozytorium, w którym właśnie jesteśmy, aby uruchomić potrzebne do działania WebSerwisy, a także, zgodnie z powyższymi instrukcjami skonfigurować bazę danych na podstawie kopii zapasowej.
 
+Aplikacja WEB:
+xxxx@com.pl / x
+
+Aplikacja Android:
+test@test.com / test
+
 # Kopia zapasowa Postgresql
 
 https://www.dropbox.com/s/6irmbukbdsztuux/cTalk_database.backup?dl=0
