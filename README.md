@@ -12,6 +12,9 @@ REST, Thymeleaf, Bootstrap, Android.
 
 # Info
 
+## Prezentacja na YouTube:
+### https://www.youtube.com/watch?v=ati_kA2bgt0
+
 Repozytorium aplikacji Android: https://github.com/filipolszewski/CultureTalkAndroid
 
 Projekty całej aplikacji CultureTalk do programu yED (użyte w filmie):
